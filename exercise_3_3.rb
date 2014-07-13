@@ -46,6 +46,7 @@ class Document
 	end
 
 	def replace_word(old_word, new_word)
+		@content.gsub(old_word, new_word)  
 
 
 	end 
@@ -57,4 +58,4 @@ a=Document.new(:author => "someone", :title => "my book", :content => "this is t
 
 a.title_with_date
  
-a.replace_word("content" , "abd ")
+puts a.replace_word("content" , "abd ")

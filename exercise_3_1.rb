@@ -20,7 +20,7 @@ class Document
         @author =attributes[:author]
         @title =attributes[:title]
         @content =attributes[:content]
-end
+    end
 
     def + (arg)
     	#puts @title
