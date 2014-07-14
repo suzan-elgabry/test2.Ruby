@@ -21,9 +21,9 @@ require 'time'
 module Generic
 	def current_date
 	
-current_time = DateTime.now
+current_time = Time.now.to_date
 
-return current_time.strftime "%d/%m/%Y %H:%M"
+#return current_time.strftime "%d/%m/%Y %H:%M"
 	end
 
    
@@ -41,12 +41,12 @@ class Document
 	end
 
 	def title_with_date 
-	puts title + " " + current_date
+        return "#{title} #{current_date}"
 
 	end
 
 	def replace_word(old_word, new_word)
-		@content.gsub(old_word, new_word)  
+		 @content.gsub!(old_word, new_word)
 
 
 	end 
@@ -56,6 +56,6 @@ end
 
 a=Document.new(:author => "someone", :title => "my book", :content => "this is the content of my book")
 
-a.title_with_date
+puts a.title_with_date
  
 puts a.replace_word("content" , "abd ")
